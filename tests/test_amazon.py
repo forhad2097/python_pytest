@@ -21,7 +21,6 @@ class TestAmazon:
     def test_search_for_games(self, setup):
         # Case 2: Search for 'games'
         setup.search_element_by_search_box("games")
-        setup.take_screenshot("test_search_for_games_pass")
 
     def test_close_browser(self, setup):
         # Case 3: Browser should close automatically after test completion

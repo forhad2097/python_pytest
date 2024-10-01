@@ -6,7 +6,7 @@ import time
 import os
 from datetime import datetime
 
-class BasePage:
+class CommonMethods:
     def __init__(self, driver):
         self.driver = driver
 
@@ -41,7 +41,8 @@ class BasePage:
             search_box.submit()
 
     def take_screenshot(self, filename="screenshot"):
-        screenshots_dir = os.path.join(os.getcwd(), "screenshots")
+        root_path = os.path.dirname(os.getcwd())
+        screenshots_dir = root_path + "Python_pytest_Automation\screenshots"
         if not os.path.exists(screenshots_dir):
             os.makedirs(screenshots_dir)
         timestamp = datetime.now().strftime("%Y_%m_%d_%H%M%S")
